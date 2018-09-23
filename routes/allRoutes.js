@@ -9,15 +9,19 @@ const authRouter = require('./user/auth-router.js');
 const profileRouter = require('./user/profile-router.js');
 const errors = require('./../lib/error-middleware.js');
 
-modules.exports = new Router()
-    .use([
-        cors({
-            credentials: true,
-            origin: process.env.CORS_ORIGINS,
-        }),
-        morgan('dev'),
-        bindResponseMethods,
-        authRouter,
-        profileRouter,
-        errors,
-    ]);
+module.exports = new Router()
+  .use([
+    // GLOBAL MIDDLEWARE
+    // cors(),
+    cors({
+      credentials: true,
+      origin: process.env.CORS_ORIGINS,
+    }),
+    morgan('dev'),
+    bindResponseMethods,
+    // ROUTERS
+    authRouter,
+    profileRouter,
+    // ERROR HANDLERS
+    errors,
+  ]);
