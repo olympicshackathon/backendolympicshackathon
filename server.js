@@ -9,7 +9,10 @@ const allRoutes = require('./routes/allRoutes.js');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI, { 
+  useCreateIndex: true,
+  useNewUrlParser: true
+});
 
 // ROUTES & MIDDLEWARE
 app.use(allRoutes);
