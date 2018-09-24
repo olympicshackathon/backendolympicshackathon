@@ -18,7 +18,7 @@ mongoose.connect(process.env.MONGODB_URI, {
 app.use(allRoutes);
 
 const server = module.exports = app.listen(PORT, () => {
-  debug(`bracket busters is running on: ${PORT}`);
+  debug(`Olympics Backend is running on: ${PORT}`);
 });
 
 server.isRunning = true;
