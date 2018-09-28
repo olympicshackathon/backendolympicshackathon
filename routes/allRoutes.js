@@ -7,6 +7,7 @@ const cors = require('cors');
 const bindResponseMethods = require('./../lib/bind-response-methods.js');
 const authRouter = require('./user/auth-router.js');
 const profileRouter = require('./user/profile-router.js');
+const mapRouter = require('./pokemon/map-router.js');
 const errors = require('./../lib/error-middleware.js');
 
 module.exports = new Router()
@@ -22,6 +23,7 @@ module.exports = new Router()
     // ROUTERS
     authRouter,
     profileRouter,
+    mapRouter,
     // ERROR HANDLERS
     errors,
   ]);
